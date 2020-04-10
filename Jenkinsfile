@@ -21,5 +21,20 @@ pipeline {
                build job:'deploy-to-staging'
            }
        }
-  }  
+       stage('deploy to production')
+           steps{
+               timeout(time:5, unit:'DAYS'){
+                   input message: '是否部署到生产环境'
+               }
+               build job: 'deploy-to-production'
+           }
+           post{
+               success{
+                   echo '部署到生产环境'
+               }
+               failture{
+                   echo '部署失败'
+               }
+           }
+    }  
 }
