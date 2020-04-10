@@ -13,8 +13,13 @@ pipeline {
                success{
                    echo 'start store....'
                    archiveArtifacts artifacts: '**/target/*.war'
+                }
            }
        }
-    }
+       stage('deploy to staging'){
+           steps{
+               build job:'deploy-to-staging'
+           }
+       }
   }  
 }
