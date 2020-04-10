@@ -32,7 +32,7 @@ pipeline {
                success{
                    echo '部署到生产环境'
                }
-               failture{
+               failure{
                    echo '部署失败'
                }
            }
