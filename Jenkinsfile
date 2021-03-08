@@ -16,12 +16,13 @@ pipeline {
                 }
            }
        }
-       /*
+       
        stage('deploy to staging'){
            steps{
                build job:'deploy-to-staging-project'
            }
        }
+       /*
        stage('deploy to production'){
            steps{
                timeout(time:5, unit:'DAYS'){
