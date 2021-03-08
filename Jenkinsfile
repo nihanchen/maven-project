@@ -18,7 +18,7 @@ pipeline {
        }
        stage('deploy to staging'){
            steps{
-               build job:'deploy-to-staging'
+               build job:'deploy-to-staging-project'
            }
        }
        stage('deploy to production'){
@@ -26,7 +26,7 @@ pipeline {
                timeout(time:5, unit:'DAYS'){
                    input message: 'deploy to production or not'
                }
-               build job: 'deploy-to-production'
+               build job: 'deploy-to-production-project'
            }
            post{
                success{
