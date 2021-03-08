@@ -11,7 +11,7 @@ pipeline {
            }    
            post {
                success{
-                   echo 'start store....'
+                   echo 'start store...'
                    archiveArtifacts artifacts: '**/target/*.war'
                 }
            }
